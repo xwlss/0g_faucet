@@ -32,10 +32,15 @@ def get_nocaptcha_token(no_captcha_api_token) :
 
 
 def faucet(address,cap):
-    
-    proxy = {
-                'all': '' 
-            }
+    #更新代理 需要自行购买或者配置 目前市场上很多 大家按自己需要使用
+    #以nstproxy示例 
+    #在nstproxy网站上注册获取 nstproxy_Channel 和 nstproxy_Password
+    #nstproxy_Channel='XXX'
+    #nstproxy_Password='XXX'
+    #nstproxies = f"http://{nstproxy_Channel}-residential-country_ANY-r_5m-s_BsqLCLkiVu:{nstproxy_Password}@gw-us.nstproxy.com:24125"
+    #proxy = {'all://': nstproxy}
+    proxy = {'all://': 'http://127.0.0.1:12345'}#以你的代理服务网址或ip和端口替换127.0.0.1:12345   #强调 并不推荐这个代理 
+
     headers = {
         'accept': '*/*',
         'accept-language': 'zh-CN,zh;q=0.9,ru;q=0.8',
