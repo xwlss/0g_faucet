@@ -12,8 +12,8 @@ from eth_account import Account
 
 
 
-def get_nocaptcha_token() :
-    no_captcha_api_token=''
+def get_nocaptcha_token(no_captcha_api_token) :
+
     
     headers = {'User-Token': no_captcha_api_token, 'Content-Type': 'application/json', 'Developer-Id': 'CiKFW5'}
     json_data = {
@@ -51,14 +51,15 @@ def faucet(address,cap):
         response = requests.post('https://faucet.0g.ai/api/faucet', headers=headers, data=data,proxies=proxy,verify=False)
         print(address,response.text)
         if ('0x' in response.text or 'processed' in response.text ):
-            with open('og.txt','a') as f:
+            with open('0g.txt','a') as f:
                 f.writelines(address+':'+pk+'\n')
             f.close()
         status_code=response.status_code
         time.sleep(1)
 for in range(1000):
     try:
-        g0=get_nocaptcha_token()
+        no_captcha_api_token=''    # https://www.nocaptcha.io/register?c=CiKFW5
+        g0=get_nocaptcha_token(no_captcha_api_token)
         acc=Account.create()
         address=acc.address
         pk=acc.key.hex()
