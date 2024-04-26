@@ -38,8 +38,8 @@ def faucet(address,cap):
     #nstproxy_Channel='XXX'
     #nstproxy_Password='XXX'
     #nstproxies = f"http://{nstproxy_Channel}-residential-country_ANY-r_5m-s_BsqLCLkiVu:{nstproxy_Password}@gw-us.nstproxy.com:24125"
-    #proxy = {'all://': nstproxy}
-    proxy = {'all://': 'http://127.0.0.1:12345'}#以你的代理服务网址或ip和端口替换127.0.0.1:12345   #强调 并不推荐这个代理 
+    #proxy = {'all': nstproxy}
+    proxy = {'all': 'http://127.0.0.1:12345'}#以你的代理服务网址或ip和端口替换127.0.0.1:12345   #强调 并不推荐这个代理 
 
     headers = {
         'accept': '*/*',
